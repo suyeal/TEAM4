@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,26 +28,35 @@ public class Login extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
 		String command = request.getParameter("command");
-		
-////////////서상욱-로그인///////////////////
+		String url = null;
+		// //////////서상욱-로그인/로그아웃///////////////////
 		if (command.equals("login")) {
 			String email = request.getParameter("email");
 			String pw = request.getParameter("pw");
-			String url = null;
 			try {
 				MemberBean mb = MemberDAO.checkMember(email, pw);
-				if (mb != null) { 
+				if (mb != null) {
 					HttpSession session = request.getSession();
 					session.setAttribute("member", mb);
+					session.setAttribute("memberNum", mb.getMemberNum());
 					url = "index.jsp";
-				}else{
+				} else {
 					url = "login/loginError.jsp";
 				}
 			} catch (Exception e) {
 				url = "login/loginError.jsp";
 			}
 			request.getRequestDispatcher(url).forward(request, response);
+		} else if (command.equals("logout")) {
+			try {
+				HttpSession session = request.getSession();
+				session.removeAttribute("member");
+				url = "index.jsp";
+			} catch (Exception e) {
+				url = "login/loginError.jsp";
+			}
+			request.getRequestDispatcher(url).forward(request, response);
 		}
-////////////서상욱-로그인///////////////////
+		// //////////서상욱-로그인/로그아웃///////////////////
 	}
 }

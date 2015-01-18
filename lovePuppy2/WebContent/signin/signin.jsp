@@ -1,3 +1,4 @@
+<%@page import="model.domain.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -27,34 +28,33 @@
 ================================================== -->
 <body>
 	<%@include file="../header.jsp"%>
-
 	<div class="container">
-
-		<form class="form-signin">
-			<h2 class="form-signin-heading">Please sign in</h2>
-			
-			<label for="email" class="sr-only">Email address</label> 
-			<input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
-
-			<button class="btn btn-lg btn-primary btn-block" type="button" onclick="idCheck()" style="margin-bottom : 10px">중복 체크</button>
-			
-			<label for="password" class="sr-only">Password</label>
-			<input type="password" id="password"class="form-control" placeholder="Password" required>
-			
-			<label for="password2" class="sr-only">Password  Confirm</label>
-			<input type="password" id="password2"class="form-control" placeholder="Password  Confirm" required>
-			
-			<label for="name" class="sr-only">Name</label> 
-			<input type="text" id="name" class="form-control" placeholder="Name" required>
-			
-			<label for="phone" class="sr-only">Phone Number</label> 
-			<input type="text" id="phone" class="form-control" placeholder="Phone Number" required>
-			
-			<label for="local" class="sr-only">Local</label> 
-			<input type="text" id="local" class="form-control" placeholder="Local" required>
-			
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-			<button class="btn btn-lg btn-primary btn-block" type="reset">Reset</button>
+		<form class="form-signin" method="post" action="<%=request.getContextPath()%>/member.do">
+    		<input type="hidden" value="signup" name="command">
+				<h2 class="form-signin-heading">Please sign in</h2>
+				
+				<label for="email" class="sr-only">Email address</label>
+				<input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+	
+				<button  class="btn btn-lg btn-primary btn-block" type="button" onclick="location.href='idcheck.jsp'" style="margin-bottom : 10px">중복 체크</button>
+				
+				<label for="password" class="sr-only">Password</label>
+				<input type="password" name="password" class="form-control" placeholder="Password" required>
+				
+				<label for="password2" class="sr-only">Password  Confirm</label>
+				<input type="password" name="password2" class="form-control" placeholder="Password  Confirm" required>
+				
+				<label for="name" class="sr-only">Name</label> 
+				<input type="text" name="name" class="form-control" placeholder="Name" required>
+				
+				<label for="phone" class="sr-only">Phone Number</label> 
+				<input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
+				
+				<label for="local" class="sr-only">Local</label> 
+				<input type="text" name="local" class="form-control" placeholder="Local" required>
+				
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+				<button class="btn btn-lg btn-primary btn-block" type="reset">Reset</button>
 		</form>
 		<!-- FOOTER -->
 		<%@include file="../footer.jsp"%>

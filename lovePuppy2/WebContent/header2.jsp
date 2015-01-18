@@ -33,7 +33,7 @@
 									<li><a href="<%=request.getContextPath()%>/puppy/puppyChange.jsp">MyPuppy ¼öÁ¤</a></li>
 								</ul></li>
 								<li><a href="#">${member.name}´Ô ¾È³çÇÏ¼¼¿ä.</a></li>
-								<li><a href="location.href='login.do?command=logout&id=${member.id}'">Logout</a></li>
+								<li><a href="<%=request.getContextPath()%>/login.do?command=logout">Logout</a></li>
 						</ul>
 					</div>
 				</div>

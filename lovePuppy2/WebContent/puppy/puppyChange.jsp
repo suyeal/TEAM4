@@ -38,25 +38,27 @@
 
 	<div class="container">
 
-		<form class="form-signin">
+		<form action="<%=request.getContextPath()%>/puppy.do" class="form-signin" method="post">
 			<h2 class="form-signin-heading">Please Change</h2>
 			
 			<label for="pName" class="sr-only">Puppy's Name</label> 
-			<input type="text" id="pName" class="form-control" placeholder="Puppy's Name" required readonly>
+			<!-- name추가 --><input type="text" name="pName" id="pName" class="form-control" placeholder="Puppy's Name" required autofocus>
 
 			<label for="pKind" class="sr-only">Kind</label>
-			<input type="text" id="pKind"class="form-control" placeholder="Kind" required autofocus>
+			<!-- name추가 --><input type="text" name="pKind" id="pKind"class="form-control" placeholder="Kind" required>
 			
 			<label for="pGender" class="sr-only">Gender</label>
-			<input type="text" id="pGender"class="form-control" placeholder="Gender" required>
+			<!-- name추가 --><input type="text" name="pGender" id="pGender"class="form-control" placeholder="Gender" required>
 			
 			<label for="pAge" class="sr-only">Age</label> 
-			<input type="text" id="pAge" class="form-control" placeholder="Age" required>
+			<!-- name추가 --><input type="text" name="pAge" id="pAge" class="form-control" placeholder="Age" required>
 			
 			<label for="pSize" class="sr-only">Size(cm)</label> 
-			<input type="text" id="pSize" class="form-control" placeholder="Size(cm)" required>
+			<!-- name추가 --><input type="text" name="pSize" id="pSize" class="form-control" placeholder="Size(cm)" required>
 			
-			<button class="btn btn-lg btn-primary btn-block" type="button">Do Change</button>
+			<input type="hidden" value="updatePuppy"  name="command" >
+			<input type="hidden" value="${member.memberNum}"  name="memberNum">
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Do Change</button>
 			<button class="btn btn-lg btn-primary btn-block" type="reset">Reset</button>
 		</form>
 		<!-- FOOTER -->

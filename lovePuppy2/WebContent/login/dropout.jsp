@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!-- 이진희코드 -->
 <html lang="en">
 <head>
 <meta charset="EUC-KR">
@@ -22,12 +21,12 @@
 <link href="../css/signin.css" rel="stylesheet">
 <script src="../assets/js/ie-emulation-modes-warning.js"></script>
 <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body>
-	<c:choose>
+
+		<c:choose>
 		<c:when test="${empty member}">
 			<a name="5"><%@include file="../header.jsp"%></a>
 		</c:when>
@@ -37,28 +36,14 @@
 	</c:choose>
 
 	<div class="container">
-
-		<form action="<%=request.getContextPath()%>/puppy.do" method="post" class="form-signin">
-			<input type="hidden" name="command" value="insert">
-			<h2 class="form-signin-heading">Enroll Puppy's Info</h2>
-			
-			<label for="pName" class="sr-only">Puppy's Name</label> 
-			<input type="text" id="pName" name="name" class="form-control" placeholder="Puppy's Name" required autofocus>
-
-			<label for="pKind" class="sr-only">Kind</label>
-			<input type="text" id="pKind" name="kind" class="form-control" placeholder="Kind" required>
-			
-			<label for="pGender" class="sr-only">Gender</label>
-			<input type="text" id="pGender" name="gender" class="form-control" placeholder="Gender" required>
-			
-			<label for="pAge" class="sr-only">Age</label> 
-			<input type="text" id="pAge" name="age" class="form-control" placeholder="Age" required>
-			
-			<label for="pSize" class="sr-only">Size(cm)</label> 
-			<input type="text" id="pSize" name="size" class="form-control" placeholder="Size(cm)" required>
-
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Enroll</button>
-			<button class="btn btn-lg btn-primary btn-block" type="reset">Reset</button>
+		<form action="<%=request.getContextPath()%>/member.do" class="form-signin" method="post">
+			<h2 class="form-signin-heading">Drop Out</h2>
+			<label for="inputEmail" class="sr-only">Email address</label> 
+			<input type="email" name="email" id="Email" class="form-control" placeholder="Email address" required autofocus>
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" name="pw" id="pw" class="form-control" placeholder="Password" required>
+			<input type="hidden" name="command" value="dropout">
+			<input class="btn btn-lg btn-primary btn-block" value="dropout" type="submit">
 		</form>
 		<!-- FOOTER -->
 		<%@include file="../footer.jsp"%>

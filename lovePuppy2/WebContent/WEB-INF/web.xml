@@ -4,16 +4,16 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
+   <servlet>
     <description></description>
-    <display-name>admin</display-name>
-    <servlet-name>admin</servlet-name>
-    <servlet-class>controller.admin</servlet-class>
+    <display-name>Puppy</display-name>
+    <servlet-name>Puppy</servlet-name>
+    <servlet-class>controller.Puppy</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>admin</servlet-name>
-    <url-pattern>/admin</url-pattern>
-  </servlet-mapping>
+    <servlet-name>Puppy</servlet-name>
+    <url-pattern>/puppy.do</url-pattern>
+  </servlet-mapping>  
   <servlet>
     <description></description>
     <display-name>Login</display-name>
@@ -24,12 +24,20 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/login.do</url-pattern>
   </servlet-mapping>
-    <resource-ref>
+  <resource-ref>
     <description>Oracle Datasource example</description>
     <res-ref-name>jdbc/oracle</res-ref-name>
     <res-type>javax.sql.DataSource</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
-
-  
+  <servlet>
+    <description></description>
+    <display-name>Member</display-name>
+    <servlet-name>Member</servlet-name>
+    <servlet-class>controller.Member</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Member</servlet-name>
+    <url-pattern>/member.do</url-pattern>
+  </servlet-mapping>
 </web-app>

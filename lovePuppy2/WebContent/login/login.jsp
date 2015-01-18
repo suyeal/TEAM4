@@ -24,6 +24,11 @@
 </head>
 <!-- NAVBAR
 ================================================== -->
+<script language="JavaScript">
+function signin(){
+	document.location.href="<%=request.getContextPath()%>/signin/signin.jsp"
+}
+</script>
 <body>
 
 		<c:choose>
@@ -44,8 +49,10 @@
 			<input type="password" name="pw" id="pw" class="form-control" placeholder="Password" required>
 			<input type="hidden" name="command" value="login">
 			<input class="btn btn-lg btn-primary btn-block" value="login" type="submit">
-			<button class="btn btn-lg btn-primary btn-block" onclick="location.href='<%=request.getContextPath()%>/signin/signin.jsp'">Sign In</button>
+			<input class="btn btn-lg btn-primary btn-block" value="Sing In" type="button" onclick="location.href='<%=request.getContextPath()%>/signin/signin.jsp'">
 		</form>
+
+		
 		<!-- FOOTER -->
 		<%@include file="../footer.jsp"%>
 	</div>
