@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -21,8 +21,14 @@
 <!-- NAVBAR
 ================================================== -->
 <body>
-	<%@include file="header.jsp"%>
-	
+	<c:choose>
+		<c:when test="${empty member}">
+			<a name="5"><%@include file="../header.jsp"%></a>
+		</c:when>
+		<c:otherwise>
+			<a name="5"><%@include file="../header2.jsp"%></a>
+		</c:otherwise>
+	</c:choose>
 	<!-- Carousel
     ================================================== -->
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -39,11 +45,13 @@
 					<div class="carousel-caption">
 						<h1>당신의 강아지도 짝이 필요합니다.</h1>
 						<p>
-							<h1><code>지금 바로 가입하세요.</code></h1>
-							<br>
+						<h1>
+							<code>지금 바로 가입하세요.</code>
+						</h1>
+						<br>
 						</p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="signin/signin.jsp" role="button">Sign up today</a>
+							<a class="btn btn-lg btn-primary" href="<%=request.getContextPath()%>/signin/signin.jsp" role="button">Sign up today</a>
 						</p>
 					</div>
 				</div>
@@ -55,7 +63,7 @@
 						<h1>강아지를 올려보세요.</h1>
 						<p>수많은 짝이 당신의 강아지를 기다리고 있습니다.</p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="puppy/puppyEnroll.jsp" role="button">Up to my Puppy Info</a>
+							<a class="btn btn-lg btn-primary" href="request.getContextPath()%>/puppy/puppyEnroll.jsp" role="button">Up to my Puppy Info</a>
 						</p>
 					</div>
 				</div>
@@ -67,7 +75,7 @@
 						<h1>짝을 찾는 강아지를 확인하세요.</h1>
 						<p>당신의 강아지에 천생연분을 만날 수 있을 것입니다.</p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="puppy/puppyList.jsp" role="button">Go to Puppys List</a>
+							<a class="btn btn-lg btn-primary" href="request.getContextPath()%>/puppy/puppyList.jsp" role="button">Go to Puppys List</a>
 						</p>
 					</div>
 				</div>
@@ -143,9 +151,7 @@
 				<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
 			</div>
 		</div>
-
 		<hr class="featurette-divider">
-
 		<div class="row featurette">
 			<div class="col-md-5">
 				<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
@@ -158,7 +164,6 @@
 					magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 			</div>
 		</div>
-
 		<hr class="featurette-divider">
 
 		<div class="row featurette">
@@ -173,18 +178,9 @@
 				<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
 			</div>
 		</div>
-
 		<hr class="featurette-divider">
-
-		<!-- /END THE FEATURETTES -->
-
-
-		<!-- FOOTER -->
 		<%@include file="footer.jsp"%>
-
 	</div>
 	<!-- /.container -->
-
-
 </body>
 </html>

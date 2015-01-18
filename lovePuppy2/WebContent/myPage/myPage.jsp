@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -26,33 +27,34 @@
 <!-- NAVBAR
 ================================================== -->
 <body>
-	<%@include file="../header.jsp"%>
+
+		<c:choose>
+		<c:when test="${empty member}">
+			<a name="5"><%@include file="../header.jsp"%></a>
+		</c:when>
+		<c:otherwise>
+			<a name="5"><%@include file="../header2.jsp"%></a>
+		</c:otherwise>
+	</c:choose>
 
 	<div class="container">
 
 		<form class="form-signin">
-			<h2 class="form-signin-heading">Please Change</h2>
+			<h2 class="form-signin-heading">My Infomation</h2>
 			
 			<label for="email" class="sr-only">Email address</label> 
-			<input type="email" id="email" class="form-control" placeholder="Email address" required autofocus readonly>
-			
-			<label for="password" class="sr-only">Password</label>
-			<input type="password" id="password"class="form-control" placeholder="Password" required>
-			
-			<label for="password2" class="sr-only">Password  Confirm</label>
-			<input type="password" id="password2"class="form-control" placeholder="Password  Confirm" required>
+			<input type="email" id="email" class="form-control" placeholder="${member.email}" required autofocus readonly>
 			
 			<label for="name" class="sr-only">Name</label> 
-			<input type="text" id="name" class="form-control" placeholder="Name" required readonly>
+			<input type="text" id="name" class="form-control" placeholder="${member.name}" required readonly>
 			
 			<label for="phone" class="sr-only">Phone Number</label> 
-			<input type="text" id="phone" class="form-control" placeholder="Phone Number" required>
+			<input type="text" id="phone" class="form-control" placeholder="${member.phone}" required readonly>
 			
 			<label for="local" class="sr-only">Local</label> 
-			<input type="text" id="local" class="form-control" placeholder="Local" required>
+			<input type="text" id="local" class="form-control" placeholder="${member.local}" required readonly>
 			
-			<button class="btn btn-lg btn-primary btn-block" type="button">Do Change</button>
-			<button class="btn btn-lg btn-primary btn-block" type="reset">Reset</button>
+			<button class="btn btn-lg btn-primary btn-block" type="button" onclick="location.href='change.jsp'">Change</button>
 		</form>
 		<!-- FOOTER -->
 		<%@include file="../footer.jsp"%>

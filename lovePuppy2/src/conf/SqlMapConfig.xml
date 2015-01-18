@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<properties resource="conf/db.properties" />
+	
+	<typeAliases>
+
+		<typeAlias type="model.domain.MemberBean" alias="member" />
+		<typeAlias type="model.domain.McPuppyBean" alias="mcpuppy" />
+		<typeAlias type="model.domain.PuppyBean" alias="puppy" />
+		<typeAlias type="model.domain.WantMcBean" alias="wantmc" />
+
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.id}" />
+				<property name="password" value="${jdbc.pw}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="conf/member.xml" />
+		<mapper resource="conf/mcPuppy.xml" />
+		<mapper resource="conf/puppy.xml" />
+		<mapper resource="conf/wantMc.xml" />
+	</mappers>
+
+</configuration>

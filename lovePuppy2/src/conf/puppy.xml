@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="PUPPY">
+
+	<resultMap id="PuppyResult" type="puppy">
+		<result property="puppyNum" column="PUPPY_NUM" />
+		<result property="puppyName" column="PUPPY_NAME" />
+		<result property="puppyAge" column="PUPPY_AGE" />
+		<result property="puppyGender" column="PUPPY_GENDER" />
+		<result property="puppyKind" column="PUPPY_KIND" />
+		<result property="puppySize" column="PUPPY_SIZE" />
+		<result property="memberNum" column="MEMBER_NUM" />
+		<result property="smallPic" column="SMALL_PIC" />
+		<result property="bigPic" column="BIG_PIC" />
+	</resultMap>
+
+	
+</mapper>

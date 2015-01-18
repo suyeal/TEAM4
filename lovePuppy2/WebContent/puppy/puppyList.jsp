@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -22,33 +21,53 @@
 <link href="../css/signin.css" rel="stylesheet">
 <script src="../assets/js/ie-emulation-modes-warning.js"></script>
 <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+<link href="../dist/css/1-col-portfolio.css" rel="stylesheet">
+<script src="../dist/js/jquery.js"></script>
+
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body>
-	<%@include file="../header.jsp"%>
+	<c:choose>
+		<c:when test="${empty member}">
+			<a name="5"><%@include file="../header.jsp"%></a>
+		</c:when>
+		<c:otherwise>
+			<a name="5"><%@include file="../header2.jsp"%></a>
+		</c:otherwise>
+	</c:choose>
 
+	<!-- Page Content -->
 	<div class="container">
 
-		<form class="form-signin">
-			<h2 class="form-signin-heading">Please sign in</h2>
-			<label for="inputEmail" class="sr-only">Email address</label> 
-			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-			
-			<label for="inputPassword" class="sr-only">Password</label>
-			<input type="password" id="inputPassword"class="form-control" placeholder="Password" required>
-			
-			<label for="inputName" class="sr-only">Name</label> 
-			<input type="text" id="inputName" class="form-control" placeholder="text" required>
-			
-			<label for="inputPhone" class="sr-only">Phone Number</label> 
-			<input type="text" id="inputPhone" class="form-control" placeholder="text" required>
-			
-			<label for="inputlocal" class="sr-only">Local</label> 
-			<input type="text" id="inputLocal" class="form-control" placeholder="text" required
->
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-		</form>
+		<!-- Page Heading -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">
+					Page Heading <small>Secondary Text</small>
+				</h1>
+			</div>
+		</div>
+		<!-- /.row -->
+
+		<!-- Project One -->
+		<div class="row">
+			<div class="col-md-7">
+				<a href="#"> <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+				</a>
+			</div>
+			<div class="col-md-5">
+				<h3>매칭 신청 강아지 리스트</h3>
+				<h4>Subheading</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore,
+					voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+				<a class="btn btn-primary" href="<%=request.getContextPath()%>/puppy/puppyDetail.jsp">View Project <span
+					class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+		</div>
+		<!-- /.row -->
+
+		<hr>
 		<!-- FOOTER -->
 		<%@include file="../footer.jsp"%>
 	</div>

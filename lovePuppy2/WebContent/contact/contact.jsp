@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -24,7 +25,14 @@
 <!-- NAVBAR
 ================================================== -->
 <body>
-	<%@include file="../header.jsp"%>
+	<c:choose>
+		<c:when test="${empty member}">
+			<a name="5"><%@include file="../header.jsp"%></a>
+		</c:when>
+		<c:otherwise>
+			<a name="5"><%@include file="../header2.jsp"%></a>
+		</c:otherwise>
+	</c:choose>
 
 	<div class="container" style="top:50%; left:50%">
 	<table width="1000" align="center" border="0" cellspacing="0" cellpadding="0"> <tr  align="center" ><td   >

@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -21,35 +20,39 @@
 <link href="../css/signin.css" rel="stylesheet">
 <script src="../assets/js/ie-emulation-modes-warning.js"></script>
 <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+<link href="../dist/css/1-col-portfolio.css" rel="stylesheet">
+<script src="../dist/js/jquery.js"></script>
+<link href="../dist/css/the-big-picture.css" rel="stylesheet">
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body>
-
-		<c:choose>
-		<c:when test="${empty member}">
-			<a name="5"><%@include file="../header.jsp"%></a>
-		</c:when>
-		<c:otherwise>
-			<a name="5"><%@include file="../header2.jsp"%></a>
-		</c:otherwise>
-	</c:choose>
-
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 	<div class="container">
-		<form action="<%=request.getContextPath()%>/login.do" class="form-signin" method="post">
-			<h2 class="form-signin-heading">Please Login</h2>
-			<label for="inputEmail" class="sr-only">Email address</label> 
-			<input type="email" name="email" id="Email" class="form-control" placeholder="Email address" required autofocus>
-			<label for="inputPassword" class="sr-only">Password</label>
-			<input type="password" name="pw" id="pw" class="form-control" placeholder="Password" required>
-			<input type="hidden" name="command" value="login">
-			<input class="btn btn-lg btn-primary btn-block" value="login" type="submit">
-			<button class="btn btn-lg btn-primary btn-block" onclick="location.href='<%=request.getContextPath()%>/signin/signin.jsp'">Sign In</button>
-		</form>
-		<!-- FOOTER -->
-		<%@include file="../footer.jsp"%>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="<%=request.getContextPath()%>/puppy/puppyList.jsp">이전으로 돌아가기</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
 	</div>
-	<!-- /container -->
+	<!-- /.container --> </nav>
+
+	<!-- Page Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<h1>The Big Picture</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, unde, sunt incidunt id sapiente rerum soluta voluptate harum veniam
+					fuga odit ea pariatur vel eaque sint sequi tenetur eligendi.</p>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Match 신청하기</button>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
 
 </body>
 </html>

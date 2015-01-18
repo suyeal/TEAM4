@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="WANTMC">
+
+	<resultMap id="WantMcResult" type="wantmc">
+		<result property="wantNum" column="WANT_NUM" />
+		<result property="wantMsg" column="WANT_MSG" />
+		<result property="puppyNum" column="PUPPY_NUM" />
+		<result property="mcNum" column="MC_NUM" />
+	</resultMap>
+
+</mapper>

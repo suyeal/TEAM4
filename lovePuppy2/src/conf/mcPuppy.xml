@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="MCPUPPY">
+
+	<resultMap id="McPuppyResult" type="mcpuppy">
+		<result property="mcNum" column="MC_NUM" />
+		<result property="mcValiddate" column="MC_VALIDDATE" />
+		<result property="mcEnrolldate" column="MC_ENROLLDATE" />
+		<result property="mcMatched" column="MC_MATCHED" />
+		<result property="puppyNum" column="PUPPY_NUM" />
+		<result property="mcMessage" column="MC_MESSAGE" />
+	</resultMap>
+	
+
+</mapper>

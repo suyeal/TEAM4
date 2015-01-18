@@ -22,15 +22,15 @@
 							<li class="active"><a href="<%=request.getContextPath()%>/index.jsp">Home</a></li>
 							<li><a href="<%=request.getContextPath()%>/login/login.jsp">Login</a></li>
 							<li><a href="<%=request.getContextPath()%>/contact/contact.jsp">Contact</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span
+							<li class="dropdown"><a href="<%=request.getContextPath()%>/puppy/dropError.jsp" class="error" role="button" aria-expanded="false">MyPuppy<span
 									class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="<%=request.getContextPath()%>/#">Match 신청</a></li>
-									<li><a href="<%=request.getContextPath()%>/#">Puppy 보기</a></li>
+									<li><a href="<%=request.getContextPath()%>/puppy/puppyList.jsp">쿡 찔러보기</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">MyPuppy</li>
-									<li><a href="<%=request.getContextPath()%>/#">MyPuppy 등록</a></li>
-									<li><a href="<%=request.getContextPath()%>/#">MyPuppy 수정</a></li>
+									<li><a href="<%=request.getContextPath()%>/puppy/puppyReceive.jsp">쿡 보관함</a></li>
+									<li><a href="<%=request.getContextPath()%>/puppy/puppyEnroll.jsp">MyPuppy 등록</a></li>
+									<li><a href="<%=request.getContextPath()%>/puppy/puppyChange.jsp">MyPuppy 수정</a></li>
 								</ul></li>
 						</ul>
 					</div>
